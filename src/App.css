@@ -1,0 +1,909 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #050816;
+  color: #f5f7ff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 80% 10%, rgba(0, 247, 255, 0.08), transparent 30%),
+    radial-gradient(circle at 10% 60%, rgba(123, 44, 255, 0.08), transparent 30%),
+    #050816;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  width: 100%;
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: rgba(5, 8, 22, 0.88);
+  backdrop-filter: blur(15px);
+
+  border-bottom: 1px solid rgba(0, 247, 255, 0.12);
+}
+
+.logo {
+  font-family: "Orbitron", sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #00f7ff;
+  text-shadow: 0 0 15px rgba(0, 247, 255, 0.8);
+}
+
+.logo strong {
+  color: #9d4edd;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+}
+
+.nav a {
+  font-size: 14px;
+  color: #aeb6d1;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #00f7ff;
+  text-shadow: 0 0 12px rgba(0, 247, 255, 0.7);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 88vh;
+  padding: 90px 7%;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 70px;
+
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+
+  background: #00f7ff;
+  opacity: 0.05;
+  filter: blur(100px);
+  border-radius: 50%;
+
+  right: 5%;
+  top: 15%;
+}
+
+.hero-subtitle {
+  color: #00f7ff;
+  font-family: "Orbitron", sans-serif;
+  font-size: 14px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  max-width: 750px;
+
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(42px, 6vw, 78px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.hero h1 span {
+  color: #00f7ff;
+  text-shadow:
+    0 0 10px rgba(0, 247, 255, 0.7),
+    0 0 35px rgba(0, 247, 255, 0.25);
+}
+
+.hero-description {
+  max-width: 650px;
+
+  margin-top: 28px;
+
+  color: #aeb6d1;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 18px;
+  margin-top: 38px;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 16px 27px;
+  border-radius: 8px;
+
+  font-weight: 600;
+  font-size: 15px;
+
+  transition: 0.3s;
+}
+
+.btn-primary {
+  color: #031014;
+  background: #00f7ff;
+
+  box-shadow:
+    0 0 15px rgba(0, 247, 255, 0.45),
+    0 0 35px rgba(0, 247, 255, 0.15);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 25px rgba(0, 247, 255, 0.7),
+    0 0 50px rgba(0, 247, 255, 0.25);
+}
+
+.btn-secondary {
+  color: #ffffff;
+  border: 1px solid #7b2cff;
+  background: rgba(123, 44, 255, 0.08);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-4px);
+  background: rgba(123, 44, 255, 0.2);
+  box-shadow: 0 0 25px rgba(123, 44, 255, 0.35);
+}
+
+/* =========================
+   ÁREA DA FOTO
+========================= */
+
+.hero-image {
+  position: relative;
+  min-height: 480px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  width: 390px;
+  height: 440px;
+
+  position: relative;
+
+  border: 1px solid rgba(0, 247, 255, 0.4);
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0, 247, 255, 0.08),
+      rgba(123, 44, 255, 0.12)
+    );
+
+  box-shadow:
+    0 0 35px rgba(0, 247, 255, 0.15),
+    inset 0 0 40px rgba(123, 44, 255, 0.08);
+}
+
+/*
+   FOTO:
+
+   Quando você colocar sua foto, coloque o arquivo
+   dentro da pasta "public".
+
+   Exemplo:
+
+   public/
+      foto-tecnologia.jpg
+
+   O App.jsx já está preparado para ela.
+*/
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  position: relative;
+  z-index: 2;
+}
+
+/*
+   Este espaço aparece caso você ainda não tenha
+   colocado a foto.
+*/
+
+.image-placeholder {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #071525,
+      #0b1028,
+      #160b2e
+    );
+
+  z-index: 1;
+}
+
+.image-placeholder span {
+  font-family: "Orbitron", sans-serif;
+  font-size: 70px;
+  color: #00f7ff;
+
+  text-shadow:
+    0 0 10px #00f7ff,
+    0 0 35px rgba(0, 247, 255, 0.6);
+}
+
+.image-placeholder p {
+  margin-top: 15px;
+  color: #8f9ab8;
+  font-size: 15px;
+}
+
+/* =========================
+   CARDS FLUTUANTES
+========================= */
+
+.floating-card {
+  position: absolute;
+
+  padding: 16px 20px;
+
+  background: rgba(7, 13, 31, 0.9);
+  border: 1px solid rgba(0, 247, 255, 0.3);
+
+  border-radius: 12px;
+
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 0 25px rgba(0, 247, 255, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  z-index: 5;
+}
+
+.floating-card strong {
+  color: #00f7ff;
+  font-family: "Orbitron", sans-serif;
+}
+
+.floating-card span {
+  color: #8993af;
+  font-size: 12px;
+}
+
+.card-one {
+  left: -30px;
+  top: 70px;
+}
+
+.card-two {
+  right: -25px;
+  bottom: 80px;
+
+  border-color: rgba(157, 78, 221, 0.5);
+}
+
+.card-two strong {
+  color: #c77dff;
+}
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.section {
+  padding: 110px 7%;
+  position: relative;
+}
+
+.section-title {
+  max-width: 800px;
+  margin-bottom: 55px;
+}
+
+.section-title p {
+  color: #00f7ff;
+  font-family: "Orbitron", sans-serif;
+  font-size: 13px;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+}
+
+.section-title h2 {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.section-title span {
+  color: #8f9ab8;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* =========================
+   SOBRE
+========================= */
+
+.about {
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(123, 44, 255, 0.04),
+      transparent
+    );
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-text p {
+  color: #b7bfd4;
+  font-size: 17px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.about-highlight {
+  padding: 40px;
+
+  border-radius: 18px;
+
+  background: rgba(10, 16, 36, 0.8);
+  border: 1px solid rgba(0, 247, 255, 0.25);
+
+  box-shadow: 0 0 35px rgba(0, 247, 255, 0.08);
+}
+
+.about-highlight span {
+  font-family: "Orbitron", sans-serif;
+  font-size: 55px;
+  color: #00f7ff;
+
+  text-shadow: 0 0 25px rgba(0, 247, 255, 0.6);
+}
+
+.about-highlight h3 {
+  font-size: 27px;
+  margin: 20px 0 10px;
+}
+
+.about-highlight p {
+  color: #929cb7;
+  line-height: 1.7;
+}
+
+/* =========================
+   CARDS DE APRENDIZADOS
+========================= */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.info-card {
+  min-height: 240px;
+
+  padding: 28px;
+
+  background: rgba(8, 14, 32, 0.8);
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+
+  transition: 0.35s;
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(0, 247, 255, 0.45);
+
+  box-shadow:
+    0 0 25px rgba(0, 247, 255, 0.1),
+    inset 0 0 25px rgba(0, 247, 255, 0.03);
+}
+
+.card-number {
+  font-family: "Orbitron", sans-serif;
+  color: #7b2cff;
+  font-size: 13px;
+  margin-bottom: 35px;
+}
+
+.info-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.info-card p {
+  color: #8993af;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* =========================
+   TECNOLOGIAS
+========================= */
+
+.technologies-section {
+  background: rgba(123, 44, 255, 0.025);
+}
+
+.technology-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.tech-card {
+  padding: 30px;
+
+  background: #080e20;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+
+  transition: 0.35s;
+}
+
+.tech-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(123, 44, 255, 0.5);
+
+  box-shadow: 0 0 30px rgba(123, 44, 255, 0.12);
+}
+
+.tech-icon {
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 25px;
+
+  border-radius: 12px;
+
+  background: rgba(0, 247, 255, 0.08);
+  border: 1px solid rgba(0, 247, 255, 0.25);
+
+  color: #00f7ff;
+
+  font-family: "Orbitron", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.tech-card h3 {
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.tech-card p {
+  color: #8993af;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =========================
+   ÁREAS
+========================= */
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.area-card {
+  padding: 35px;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 247, 255, 0.05),
+      rgba(123, 44, 255, 0.05)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  transition: 0.3s;
+}
+
+.area-card:hover {
+  border-color: rgba(0, 247, 255, 0.35);
+  transform: translateY(-6px);
+}
+
+.area-card span {
+  color: #00f7ff;
+  font-family: "Orbitron", sans-serif;
+  font-size: 13px;
+}
+
+.area-card h3 {
+  margin: 25px 0 10px;
+  font-size: 22px;
+}
+
+.area-card p {
+  color: #8f9ab8;
+  line-height: 1.6;
+}
+
+/* =========================
+   PROJETOS
+========================= */
+
+.projects-section {
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(123, 44, 255, 0.08),
+      transparent 45%
+    );
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.project-card {
+  min-height: 210px;
+  padding: 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+
+  background: rgba(7, 13, 30, 0.9);
+
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+
+  border-color: #7b2cff;
+
+  box-shadow:
+    0 0 30px rgba(123, 44, 255, 0.15);
+}
+
+.project-card span {
+  color: #c77dff;
+  font-family: "Orbitron", sans-serif;
+}
+
+.project-card h3 {
+  font-size: 21px;
+  margin: 25px 0 10px;
+}
+
+.project-card p {
+  color: #8f9ab8;
+  line-height: 1.6;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+  margin: 60px 7% 100px;
+  padding: 70px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(0, 247, 255, 0.09),
+      rgba(123, 44, 255, 0.12)
+    );
+
+  border: 1px solid rgba(0, 247, 255, 0.2);
+
+  box-shadow:
+    0 0 60px rgba(0, 247, 255, 0.06);
+}
+
+.cta p:first-child {
+  color: #00f7ff;
+  font-family: "Orbitron", sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+.cta h2 {
+  max-width: 800px;
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1.15;
+}
+
+.cta h2 span {
+  color: #00f7ff;
+}
+
+.cta > div > p:last-child {
+  margin-top: 18px;
+  color: #919bb6;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  padding: 45px 7%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+  color: #7f8aa5;
+}
+
+.footer .logo {
+  margin-bottom: 10px;
+}
+
+.footer p {
+  font-size: 13px;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.footer-right strong {
+  color: #00f7ff;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1100px) {
+
+    .nav {
+      gap: 15px;
+    }
+  
+    .nav a {
+      font-size: 12px;
+    }
+  
+    .hero {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  
+    .hero-description {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .hero-buttons {
+      justify-content: center;
+    }
+  
+    .hero-image {
+      margin-top: 30px;
+    }
+  
+    .cards-grid,
+    .technology-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .areas-grid,
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 750px) {
+  
+    .header {
+      padding: 18px 5%;
+    }
+  
+    .nav {
+      display: none;
+    }
+  
+    .hero,
+    .section {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+  
+    .hero {
+      padding-top: 70px;
+    }
+  
+    .hero h1 {
+      font-size: 43px;
+    }
+  
+    .hero-description {
+      font-size: 16px;
+    }
+  
+    .image-container {
+      width: 300px;
+      height: 360px;
+    }
+  
+    .floating-card {
+      padding: 12px 15px;
+    }
+  
+    .card-one {
+      left: 0;
+    }
+  
+    .card-two {
+      right: 0;
+    }
+  
+    .about-content {
+      grid-template-columns: 1fr;
+    }
+  
+    .cards-grid,
+    .technology-grid,
+    .areas-grid,
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .section-title h2 {
+      font-size: 34px;
+    }
+  
+    .cta {
+      margin-left: 5%;
+      margin-right: 5%;
+      padding: 40px 25px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .footer {
+      padding-left: 5%;
+      padding-right: 5%;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 25px;
+    }
+  
+    .footer-right {
+      text-align: left;
+    }
+  }
+  
+  @media (max-width: 450px) {
+  
+    .hero h1 {
+      font-size: 37px;
+    }
+  
+    .hero-image {
+      min-height: 400px;
+    }
+  
+    .image-container {
+      width: 270px;
+      height: 330px;
+    }
+  
+    .floating-card {
+      font-size: 12px;
+    }
+  
+    .card-one {
+      left: -5px;
+    }
+  
+    .card-two {
+      right: -5px;
+    }
+  
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  
